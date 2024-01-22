@@ -53,16 +53,16 @@ public class RecipesController {
         Recipes recipe = new Recipes();
 
         model.addAttribute("recipe", recipe);
-        model.addAttribute("category", recipesRepository.findAll());
+        model.addAttribute("category", categoryRepository.findAll());
         return "recipes/create";
     }
 
     @PostMapping("/create")
-    public String pizzeria(@Valid @ModelAttribute("pizza") Recipes formRecipe, BindingResult bindingResult, Model model) {
+    public String create2(@Valid @ModelAttribute("category") Recipes formRecipe, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            model.addAttribute("ingredienti", categoryRepository.findAll());
+            model.addAttribute("category", categoryRepository.findAll());
 
-            return "pizze/create";
+            return "category/create";
         }
         Recipes savedRecipe = recipesRepository.save(formRecipe);
 

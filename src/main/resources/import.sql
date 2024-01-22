@@ -1,1 +1,2 @@
 INSERT INTO recipes (portions, preparation_time, description, title, url, ingredients) VALUES(3, 120, 'bella', 'torta di mele', 'https://www.cucchiaio.it/content/dam/cucchiaio/it/articoli/2022/11/torta-di-mele-migliori-ricette/Torta%20di%20mele%20veloce-3.jpg','mele farina');
+INSERT INTO category (name) VALUES('dolci')

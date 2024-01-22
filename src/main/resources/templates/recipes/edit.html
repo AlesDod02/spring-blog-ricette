@@ -85,6 +85,14 @@
                 </ul>
             </div>
         </div>
+        <div class="col-4">
+            <label class="form-label" for="category">Recipe category</label>
+            <select id="category" class="form-select" th:field="*{category}">
+                <option value="" selected>Choose a category</option>
+                <option th:each="cat : ${category}" th:value="${cat.id}"
+                        th:text="${cat.name}"></option>
+            </select>
+        </div>
 
 
         <div class="col-12">

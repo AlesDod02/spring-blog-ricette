@@ -32,8 +32,8 @@
     <div th:if="${recipesList.size() == 0}">The list is empty</div>
     <div class="container" th:unless="${recipesList.size() == 0}">
         <div class="row">
-            <div class="col-4" th:each="recipe : ${recipesList}">
-                <div class="card" >
+            <div class="col-4" >
+                <div class="card" th:each="recipe : ${recipesList}" >
                     <img class="card-img-top" th:src="@{${recipe.url}}" alt="img">
                     <div class="card-body text-center">
                         <h3 th:text=${recipe.title}></h3>

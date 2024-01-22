@@ -23,6 +23,7 @@
             <h3 class="text-center mt-2" th:text="|${recipe.preparationTime} minuti|"></h3>
             <h3 class="text-center mt-2" th:text="|${recipe.portions} porzioni|"></h3>
             <h3 class="text-center mt-2" th:text="|${recipe.ingredients} |"></h3>
+            <h3 class="text-center mt-2" th:text="| categoria: ${recipe.getCategory().getName()} |"></h3>
             <a type="button" class="btn btn-primary" th:href="@{/recipes/edit/{id}(id=${recipe.id})}">edit</a>
             <form
 
