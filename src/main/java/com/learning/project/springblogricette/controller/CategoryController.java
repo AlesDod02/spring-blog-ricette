@@ -56,7 +56,7 @@ public class CategoryController {
         if (result.isPresent()) {
             model.addAttribute("category", result.get());
 
-            return "category/create";
+            return "category/edit";
 
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "category with id " + id + " not found");
@@ -69,8 +69,9 @@ public class CategoryController {
         if (result.isPresent()) {
             Category categoryToEdit = result.get();
             if (bindingResult.hasErrors()) {
-                return "category/create";
+                return "category/edit";
             }
+
 
             Category savedCategory = categoryRepository.save(formcategory);
             return "redirect:/category";

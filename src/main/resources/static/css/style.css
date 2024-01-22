@@ -1,10 +1,22 @@
 .img{
-width:150px;}
+width:406px;
+height:350px;}
 .img2{
 width:500px;}
+.imgLogo{
+width:200px;
+height:170px;}
+.card-img {
+            width: 100%;
+            height: auto;
+        }
 .margine{
     margin-top: 35px;
 }
+.logocolor{
+color:#F6911D;}
+.logocolor2{
+color:#000000;}
 .button-custom {
     width: 100px; /* larghezza desiderata */
     height: 40px; /* altezza desiderata */
@@ -21,3 +33,6 @@ width:500px;}
 .bg-grey{
     background-color: #E2E3E5 !important;
 }
+footer{
+        background-color:#F6911D;
+    }

@@ -58,11 +58,11 @@ public class RecipesController {
     }
 
     @PostMapping("/create")
-    public String create2(@Valid @ModelAttribute("category") Recipes formRecipe, BindingResult bindingResult, Model model) {
+    public String create2(@Valid @ModelAttribute("recipes") Recipes formRecipe, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("category", categoryRepository.findAll());
 
-            return "category/create";
+            return "recipe/create";
         }
         Recipes savedRecipe = recipesRepository.save(formRecipe);
 
