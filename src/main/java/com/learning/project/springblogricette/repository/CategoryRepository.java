@@ -1,4 +1,11 @@
 package com.learning.project.springblogricette.repository;
 
-public interface CategoryRepository {
+import com.learning.project.springblogricette.model.Category;
+import com.learning.project.springblogricette.model.Recipes;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface CategoryRepository extends JpaRepository<Category, Integer> {
+
 }
