@@ -13,7 +13,8 @@ public class Recipes {
 
 
     private String title;
-    private List<String> ingredients;
+    @Lob
+    private String ingredients;
     private String url;
     private int preparationTime;
     private int portions;
@@ -37,11 +38,11 @@ public class Recipes {
         this.title = title;
     }
 
-    public List<String> getIngredients() {
+    public String getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<String> ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
 
