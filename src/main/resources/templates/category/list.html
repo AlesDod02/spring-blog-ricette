@@ -32,6 +32,19 @@
                     <div class="col-3 text-center pt-2">
                         <div class="ms-auto">
                             <a class="btn btn-warning me-1" th:href="@{/category/edit/{id}(id=${cat.id})}">Modifica</a>
+                            <form
+                                    th:if="${cat.getRecipesList().size() ==0}"
+                                    th:action="@{/category/delete/{id}(id=${cat.id})}"
+                                    method="post"
+                                    onsubmit="return confirm('Are you sure?')"
+                            >
+                                <button type="submit" class="btn btn-danger margine button-custom">Delete</button>
+
+                            </form>
+                            <button th:unless="${cat.getRecipesList().size() ==0}" class="btn btn-danger margine button-custom "
+                                    disabled>Delete
+                            </button>
+
 
                         </div>
                     </div>
@@ -44,6 +57,7 @@
         </ul>
         <div class="d-flex justify-content-center mt-5">
             <a class="btn btn-warning me-1 align-middle" th:href="@{/recipes}">Ritorna alle ricette</a>
+            <a class="btn btn-warning me-1 align-middle" th:href="@{/category/create}">crea una nuova categoria</a>
 
         </div>
 

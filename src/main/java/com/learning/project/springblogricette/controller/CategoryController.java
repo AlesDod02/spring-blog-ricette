@@ -1,6 +1,7 @@
 package com.learning.project.springblogricette.controller;
 
 import com.learning.project.springblogricette.model.Category;
+import com.learning.project.springblogricette.model.Recipes;
 import com.learning.project.springblogricette.repository.CategoryRepository;
 import com.learning.project.springblogricette.repository.RecipesRepository;
 import jakarta.validation.Valid;
@@ -80,6 +81,22 @@ public class CategoryController {
 
         else{
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "category with id " + id + " not found");
+        }
+    }
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
+        // verifico se il Book è presente su db
+        Optional<Category> result = categoryRepository.findById(id);
+        if (result.isPresent()) {
+            // se c'è lo cancello
+            categoryRepository.deleteById(id);
+            // mando un messaggio di successo con la redirect
+            redirectAttributes.addFlashAttribute("redirectMessage",
+                    "Category " + result.get().getName() + " deleted!");
+            return "redirect:/category";
+        } else {
+            // se non c'è sollevo un'eccezione
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "category with di " + id + " not found");
         }
     }
 
